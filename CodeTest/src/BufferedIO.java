@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class BufferedIO {
 	public static void main(String[] args) {
@@ -7,7 +12,35 @@ public class BufferedIO {
 		 * 
 		 * 버퍼 플러시(Buffer flush)
 		 * : 버퍼에 남아있는 데이터를 출력시킴(버퍼를 비우는 동작)
-		 * 
+		 * 입력: BufferedReader
+		 * 출력: BufferedWriter
 		 *  */
+		try {
+			
+			/* BufferedReader 사용예 */
+			//콘솔에서 입력받음
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			
+			//파일에서 입력받음
+//			FileReader fr = new FileReader("파일명");
+//			BufferedReader brf = new BufferedReader(fr);
+			
+			//br은 string으로 받아오기 때문에 필요시 형변환이 필요하다.
+			int num = Integer.parseInt(br.readLine());
+			//사용후 리소스 반납 필수
+			br.close();
+			/* ----------------------- */
+			
+			/* BufferedWriter 사용예 */
+			//기본적으로 개행이 없기 때문에 필요시 개행처리를 해줘야함
+			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+			bw.write("출력할 글자\n");
+			bw.newLine(); //\n과 동일함
+			bw.flush(); //남아있는 데이터를 모두 출력하고 없앰
+			bw.close(); //리소스 반납
+			/* ----------------------- */
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
