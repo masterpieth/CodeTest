@@ -14,14 +14,27 @@ public class b_9012 {
         int t = Integer.parseInt(br.readLine());
         
         while(t-->0) {
-            String str = br.readLine() + "\n";
+            boolean isVPS = true;
+            String str = br.readLine();
             Stack<Character> s = new Stack<>();
             
             for(char c : str.toCharArray()) {
-                if(c == '(') s.push(c);
-                else if(c == ')' && !s.isEmpty()) s.pop();
+                if(c == '(') {
+                    s.push(c);
+                }
+                else {
+                    if(!s.isEmpty()) {
+                        s.pop();
+                    }
+                    else {
+                        isVPS = false;
+                        break;
+                    }
+                }
             }
-            if(s.isEmpty()) bw.write("YES\n");
+            if(!s.isEmpty()) isVPS = false;
+            
+            if(isVPS) bw.write("YES\n");
             else bw.write("NO\n");
         }
         bw.flush();
