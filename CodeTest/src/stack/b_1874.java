@@ -25,6 +25,8 @@ public class b_1874 {
 			}
 			else if (s.peek() != value) {
 				System.out.println("NO");
+				//둘 중 아무거나 써도 상관 없다.
+//				System.exit(0);
 				return;
 			}
 			
