@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class b_9012_1 {
 	public static String isVPS(String str) {
