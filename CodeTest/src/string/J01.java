@@ -1,7 +1,7 @@
 package string;
 import java.util.*;
 
-public class j01 {
+public class J01 {
 	public int solution(String str, char c) {
 		int answer = 0;
 		
@@ -19,7 +19,7 @@ public class j01 {
 		return answer;
 	}
 	public static void main(String[] args) {
-		j01 J = new j01();
+		J01 J = new J01();
 		
 		Scanner sc = new Scanner(System.in);
 		String str = sc.next();
