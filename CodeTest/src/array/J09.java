@@ -3,33 +3,24 @@ import java.util.*;
 
 public class J09 {
 	public int solution(int n, int[][] arr) {
-		int answer = 0;
+		int answer = Integer.MIN_VALUE;
+		int sum1,sum2;
 		for(int i=0; i<n; i++) {
-			int tmp = 0;
+			sum1=sum2=0;
 			for(int j=0; j<n; j++) {
-				tmp+=arr[i][j];
+				sum1+=arr[i][j];
+				sum2+=arr[j][i];
 			}
-			if(answer<tmp) answer = tmp;
+			answer=Math.max(answer, sum1);
+			answer=Math.max(answer, sum2);
 		}
+		sum1=sum2=0;
 		for(int i=0; i<n; i++) {
-			int tmp = 0;
-			for(int j=0; j<n; j++) {
-				tmp+=arr[j][i];
-			}
-			if(answer<tmp) answer = tmp;
+			sum1+=arr[i][i];
+			sum2+=arr[i][n-i-1];
 		}
-		for(int i=0; i<n; i++) {
-			int tmp = 0;
-			for(int j=n-1; j>=0; j--) {
-				tmp+=arr[i][j];
-			}
-			if(answer<tmp) answer = tmp;
-		}
-		int tmp = 0;
-		for(int i=0; i<n; i++) {
-			tmp+=arr[i][i];
-		}
-		if(answer<tmp) answer = tmp;
+		answer=Math.max(answer, sum1);
+		answer=Math.max(answer, sum2);
 		return answer;
 	}
 	
