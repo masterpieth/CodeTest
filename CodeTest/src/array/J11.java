@@ -3,7 +3,7 @@ import java.util.*;
 
 public class J11 {
 	public int solution(int n, int[][] arr) {
-		int answer = 0, max=Integer.MAX_VALUE;
+		int answer = 0, max=Integer.MIN_VALUE;
 		//학생번호
 		for(int i=1; i<=n; i++) {
 			int cnt=0;
