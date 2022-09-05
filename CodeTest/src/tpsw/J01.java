@@ -6,25 +6,11 @@ public class J01 {
 		ArrayList<Integer> answer = new ArrayList<>();
 		int p1=0, p2=0;
 		while(p1<n && p2<m) {
-			if(a[p1] < b[p2]) {
-				answer.add(a[p1]);
-				p1++;
-			}
-			else {
-				answer.add(b[p2]);
-				p2++;
-			}
+			if(a[p1]<b[p2]) answer.add(a[p1++]);
+			else answer.add(b[p2++]);
 		}
-		if(p1<n) {
-			for(int i=p1; i<n; i++) {
-				answer.add(a[i]);
-			}
-		}
-		if(p2<m) {
-			for(int i=p2; i<m; i++) {
-				answer.add(b[i]);
-			}
-		}
+		while(p1<n) answer.add(a[p1++]);
+		while(p2<m) answer.add(b[p2++]);
 		return answer;
 	}
 	public static void main(String[] args) {
