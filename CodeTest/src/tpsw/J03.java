@@ -8,7 +8,7 @@ public class J03 {
 			answer+=arr[i];
 			sum+=arr[i];
 		}
-		for(int i=3; i<n; i++) {
+		for(int i=k; i<n; i++) {
 			sum = sum + arr[i] - arr[i-k];
 			if(answer<sum) answer=sum;
 		}
