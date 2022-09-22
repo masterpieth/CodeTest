@@ -4,21 +4,18 @@ import java.util.Stack;
 
 public class J02 {
 	public String solution(String str) {
-		StringBuilder answer = new StringBuilder();
+		String answer="";
 		Stack<Character> s = new Stack<>();
 		for(char x : str.toCharArray()) {
-			if(x !=')') s.push(x);
-			else {
-				while(true) {
-					char flag = s.pop();
-					if(flag=='(') break;
-				}
+			if(x==')') {
+				while(s.pop()!='(');
 			}
+			else s.push(x);
 		}
-		while(!s.isEmpty()) {
-			answer.append(s.pop());
+		for(int i=0; i<s.size(); i++) {
+			answer+=s.get(i);
 		}
-		return answer.reverse().toString();
+		return answer;
 	}
 	
 	public static void main(String[] args) {
