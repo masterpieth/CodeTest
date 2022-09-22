@@ -8,10 +8,12 @@ public class J01 {
 		Stack<Character> s = new Stack<>();
 		for(char x : str.toCharArray()) {
 			if(x=='(') s.push(x);
-			else if(x==')' && !s.isEmpty()) s.pop();
-			else if(x==')' && s.isEmpty()) return "NO";
+			else {
+				if(s.isEmpty()) return "NO";
+				s.pop();
+			}
 		}
-		if(s.size() != 0) return "NO";
+		if(!s.isEmpty()) return "NO";
 		return answer;
 	}
 	
