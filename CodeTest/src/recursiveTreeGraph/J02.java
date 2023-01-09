@@ -9,7 +9,7 @@ public class J02 {
         }
     }
     public static void main(String[] args) {
-        J01 J = new J01();
+        J02 J = new J02();
         J.DFS(11);
     }
 }
